@@ -4,6 +4,8 @@
   "description": "Monorepo root for Vercel deployment",
   "private": true,
   "scripts": {
+    "build": "npm --prefix backend install && npm --prefix backend run build && npm --prefix frontend install && npm --prefix frontend run build",
+    "start": "npm --prefix backend start",
     "vercel-build": "cd frontend && npm install && npm run build"
   },
   "dependencies": {
