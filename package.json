@@ -1,0 +1,23 @@
+{
+  "name": "quality-risk-dashboard",
+  "version": "1.0.0",
+  "description": "Monorepo root for Vercel deployment",
+  "private": true,
+  "scripts": {
+    "vercel-build": "cd frontend && npm install && npm run build"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.2",
+    "googleapis": "^174.0.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.15.0",
+    "typescript": "^5.7.3"
+  }
+}

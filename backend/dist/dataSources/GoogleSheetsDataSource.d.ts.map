@@ -1,0 +1,1 @@
+{"version":3,"file":"GoogleSheetsDataSource.d.ts","sourceRoot":"","sources":["../../src/dataSources/GoogleSheetsDataSource.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,UAAU,EAAE,MAAM,cAAc,CAAC;AAC1C,OAAO,EAAE,aAAa,EAAE,MAAM,kBAAkB,CAAC;AAKjD,qBAAa,sBAAuB,YAAW,UAAU;IACvD,OAAO,CAAC,aAAa,CAAM;IAC3B,OAAO,CAAC,aAAa,CAAS;;IAsBxB,WAAW,IAAI,OAAO,CAAC,aAAa,EAAE,CAAC;CA4D9C"}

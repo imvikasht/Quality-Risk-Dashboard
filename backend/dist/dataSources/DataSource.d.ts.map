@@ -1,0 +1,1 @@
+{"version":3,"file":"DataSource.d.ts","sourceRoot":"","sources":["../../src/dataSources/DataSource.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,kBAAkB,CAAC;AAEjD,MAAM,WAAW,UAAU;IACzB;;OAEG;IACH,WAAW,IAAI,OAAO,CAAC,aAAa,EAAE,CAAC,CAAC;CACzC"}

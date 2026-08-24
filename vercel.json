@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "outputDirectory": "frontend/dist",
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/index.ts" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": "data/**"
+    }
+  }
+}
