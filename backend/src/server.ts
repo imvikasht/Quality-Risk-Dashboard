@@ -19,6 +19,17 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// Serve frontend static files in production
+if (process.env.NODE_ENV === 'production' && !process.env.VERCEL) {
+  const frontendPath = path.join(__dirname, '../../frontend/dist');
+  app.use(express.static(frontendPath));
+  
+  // Catch-all route to serve React app for non-API requests
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(frontendPath, 'index.html'));
+  });
+}
+
 // Initialize data and start server
 async function startServer() {
   try {
