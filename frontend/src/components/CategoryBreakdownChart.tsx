@@ -10,11 +10,12 @@ import {
 
 interface Props {
   data: Record<string, number>;
+  onChartClick?: (value: string) => void;
 }
 
 const COLORS = ['#8b5cf6', '#ec4899', '#14b8a6', '#f59e0b', '#3b82f6', '#6366f1', '#10b981'];
 
-export const CategoryBreakdownChart: React.FC<Props> = ({ data }) => {
+export const CategoryBreakdownChart: React.FC<Props> = ({ data, onChartClick }) => {
   const chartData = Object.entries(data).map(([name, value]) => ({ name, value })).filter(item => item.value > 0);
 
   return (
@@ -30,6 +31,12 @@ export const CategoryBreakdownChart: React.FC<Props> = ({ data }) => {
             outerRadius={80}
             paddingAngle={5}
             dataKey="value"
+            onClick={(entry) => {
+              if (onChartClick && entry && entry.name) {
+                onChartClick(entry.name);
+              }
+            }}
+            className={onChartClick ? 'cursor-pointer' : ''}
           >
             {chartData.map((_entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

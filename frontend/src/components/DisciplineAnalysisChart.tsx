@@ -11,9 +11,10 @@ import {
 
 interface Props {
   data: Record<string, number>;
+  onChartClick?: (value: string) => void;
 }
 
-export const DisciplineAnalysisChart: React.FC<Props> = ({ data }) => {
+export const DisciplineAnalysisChart: React.FC<Props> = ({ data, onChartClick }) => {
   const chartData = Object.entries(data).map(([subject, A]) => ({ subject, A }));
 
   return (
@@ -27,7 +28,19 @@ export const DisciplineAnalysisChart: React.FC<Props> = ({ data }) => {
           <Tooltip 
             contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
           />
-          <Radar name="Records" dataKey="A" stroke="#8b5cf6" fill="#8b5cf6" fillOpacity={0.6} />
+          <Radar 
+            name="Records" 
+            dataKey="A" 
+            stroke="#8b5cf6" 
+            fill="#8b5cf6" 
+            fillOpacity={0.6}
+            onClick={(entry: any) => {
+              if (onChartClick && entry && entry.subject) {
+                onChartClick(entry.subject);
+              }
+            }}
+            className={onChartClick ? 'cursor-pointer' : ''}
+          />
         </RadarChart>
       </ResponsiveContainer>
     </div>

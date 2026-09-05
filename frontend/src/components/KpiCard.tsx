@@ -10,13 +10,20 @@ interface Props {
     isPositive: boolean;
   };
   color?: string; // Tailwind class
+  onClick?: () => void;
+  selected?: boolean;
 }
 
-export const KpiCard: React.FC<Props> = ({ title, value, icon: Icon, trend, color = 'text-blue-600' }) => {
+export const KpiCard: React.FC<Props> = ({ title, value, icon: Icon, trend, color = 'text-blue-600', onClick, selected = false }) => {
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 flex items-center justify-between">
+    <div 
+      className={`bg-white rounded-xl shadow-sm border p-6 flex items-center justify-between transition-all ${
+        onClick ? 'cursor-pointer hover:shadow-md hover:border-blue-200' : ''
+      } ${selected ? 'border-blue-500 ring-1 ring-blue-500 bg-blue-50/10' : 'border-gray-100'}`}
+      onClick={onClick}
+    >
       <div>
-        <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">{title}</p>
+        <p className={`text-sm font-medium uppercase tracking-wider ${selected ? 'text-blue-700' : 'text-gray-500'}`}>{title}</p>
         <p className="mt-2 text-3xl font-bold text-gray-900">{value}</p>
         
         {trend && (

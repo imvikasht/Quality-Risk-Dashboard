@@ -10,9 +10,10 @@ import {
 
 interface Props {
   data: { name: string; value: number; fill: string }[];
+  onChartClick?: (value: string) => void;
 }
 
-export const RiskDistributionChart: React.FC<Props> = ({ data }) => {
+export const RiskDistributionChart: React.FC<Props> = ({ data, onChartClick }) => {
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 h-96">
       <h3 className="text-lg font-semibold text-gray-800 mb-2">Risk Distribution</h3>
@@ -27,6 +28,12 @@ export const RiskDistributionChart: React.FC<Props> = ({ data }) => {
             paddingAngle={2}
             dataKey="value"
             stroke="none"
+            onClick={(entry) => {
+              if (onChartClick && entry && entry.name) {
+                onChartClick(entry.name);
+              }
+            }}
+            className={onChartClick ? 'cursor-pointer' : ''}
           >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={entry.fill} />

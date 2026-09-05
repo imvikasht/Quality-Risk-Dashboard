@@ -12,9 +12,10 @@ import {
 
 interface Props {
   data: Record<string, number>;
+  onChartClick?: (value: string) => void;
 }
 
-export const ProjectDistributionChart: React.FC<Props> = ({ data }) => {
+export const ProjectDistributionChart: React.FC<Props> = ({ data, onChartClick }) => {
   const chartData = Object.entries(data).map(([name, value]) => ({ name, value }));
 
   return (
@@ -42,7 +43,17 @@ export const ProjectDistributionChart: React.FC<Props> = ({ data }) => {
             cursor={{ fill: '#f3f4f6' }}
             contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
           />
-          <Bar dataKey="value" radius={[4, 4, 0, 0]} barSize={32}>
+          <Bar 
+            dataKey="value" 
+            radius={[4, 4, 0, 0]} 
+            barSize={32}
+            onClick={(entry) => {
+              if (onChartClick && entry && entry.name) {
+                onChartClick(entry.name);
+              }
+            }}
+            className={onChartClick ? 'cursor-pointer' : ''}
+          >
             {chartData.map((_entry, index) => (
               <Cell key={`cell-${index}`} fill="#3b82f6" />
             ))}
