@@ -37,7 +37,7 @@ async function runTests() {
 
     // 4. Validate specific record parsing (CRPO-160 LBE)
     console.log('\n--- Test 3: Specific Record Parsing (CRPO-160 LBE) ---');
-    const crpoLbe = records.find(r => r.sourceFile === 'CRPO-160-LBE LOG.xlsx' && r.serialNumber === 8);
+    const crpoLbe = records.find(r => r.sourceFile === 'CRPO-160-LBE.xlsx' && r.serialNumber === 8);
     if (!crpoLbe) {
       console.error('❌ FAIL: Could not find CRPO-160 LBE record (Sl No 8)');
       process.exit(1);
@@ -61,7 +61,7 @@ async function runTests() {
 
     // 5. Validate specific record parsing (Dorra INCR)
     console.log('\n--- Test 4: Specific Record Parsing (Dorra INCR) ---');
-    const dorraIncr = records.find(r => r.sourceFile === 'Dorra INCR LOG.xlsx' && r.serialNumber === 27);
+    const dorraIncr = records.find(r => r.sourceFile === 'Dorra INCR.xlsx' && r.serialNumber === 27);
     if (!dorraIncr) {
       console.error('❌ FAIL: Could not find Dorra INCR record (SN 27)');
       process.exit(1);
