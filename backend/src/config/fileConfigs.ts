@@ -13,7 +13,7 @@ import { FileParsingConfig } from '../types/quality';
 export const FILE_CONFIGS: FileParsingConfig[] = [
   // ─── Dorra LBE ──────────────────────────────────────────────────────────
   {
-    fileName: 'Dorra LBE LOG.xlsx',
+    fileName: 'Dorra LBE.xlsx',
     sheetName: 'Standard Violation',
     headerRow: 2,
     recordType: 'LBE',
@@ -47,7 +47,7 @@ export const FILE_CONFIGS: FileParsingConfig[] = [
 
   // ─── CRPO-160 LBE ───────────────────────────────────────────────────────
   {
-    fileName: 'CRPO-160-LBE LOG.xlsx',
+    fileName: 'CRPO-160-LBE.xlsx',
     sheetName: 'Standard Violation',
     headerRow: 2,
     recordType: 'LBE',
@@ -80,7 +80,7 @@ export const FILE_CONFIGS: FileParsingConfig[] = [
 
   // ─── Dorra INCR ─────────────────────────────────────────────────────────
   {
-    fileName: 'Dorra INCR LOG.xlsx',
+    fileName: 'Dorra INCR.xlsx',
     sheetName: 'NCR Register',
     headerRow: 11, // Data starts after summary table
     recordType: 'INCR',
@@ -113,7 +113,7 @@ export const FILE_CONFIGS: FileParsingConfig[] = [
 
   // ─── CRPO-160 INCR ──────────────────────────────────────────────────────
   {
-    fileName: 'CRPO-160-INCR LOG - Hazira Yard.xlsx',
+    fileName: 'CRPO-160-INCR.xlsx',
     sheetName: 'NCR Register',
     headerRow: 1,
     recordType: 'INCR',
